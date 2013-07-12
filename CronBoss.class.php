@@ -133,7 +133,7 @@ class CronBoss
 
 
 
-	/*! @brief Answers last esxec() output */
+	/*! @brief Answers last exec() output */
 	function response() { return $this->output; }
 
 
