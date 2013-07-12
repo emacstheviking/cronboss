@@ -44,10 +44,9 @@ Future Enhancements
  - implement PHP Array/Iterable etc interfaces for slicker integration
  - use proc_open() to reap stderr when things go wrong!
  
- - implement MARKED SECTION so that existing cron is left as-is and any items added from here are maintained at the end of the file within a tagged comment block i.e.
+ - implement MARKED SECTION so that existing cron is left as-is and any items added from here are maintained at the end of the file within a tagged comment block.
 
-    #CRONBOSS+
-    #CRONBOSS-
+
 
 ** DISCLAIMER HERE: If it works, I wrote it. If it breaks then it's
 not my fault etc. Usual rules apply about using other peoples code! **
