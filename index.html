@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Cronboss : A PHP utility to read and write &quot;crontab&quot; data for Linux based systems" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Cronboss</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/emacstheviking/cronboss">View on GitHub</a>
+
+          <h1 id="project_title">Cronboss</h1>
+          <h2 id="project_tagline">A PHP utility to read and write &quot;crontab&quot; data for Linux based systems</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/emacstheviking/cronboss/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/emacstheviking/cronboss/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="cronboss" class="anchor" href="#cronboss"><span class="octicon octicon-link"></span></a>cronboss</h1>
+
+<p>A PHP utility to read and write "crontab" data for Linux based
+systems.</p>
+
+<h1>
+<a name="use-case" class="anchor" href="#use-case"><span class="octicon octicon-link"></span></a>Use Case</h1>
+
+<p>You are developing a PHP system that needs to either read from the
+current crontab or to add jobs to it.</p>
+
+<p>This class then will allow you to read and write the "crontab" file for any
+account that your script has permissions to do so on your server.</p>
+
+<h1>
+<a name="using-it" class="anchor" href="#using-it"><span class="octicon octicon-link"></span></a>Using It...</h1>
+
+<p>Once loaded, use the <code>crontab()</code> method to be given a list of Strings
+that contain the file. What you do with this is up to you put remember
+to save your modified crontab by calling the method <code>crontab($foo)</code>
+where foo is the modified Array data.</p>
+
+<p>Here is a short example:</p>
+
+<div class="highlight highlight-php"><pre>    <span class="nv">$cron</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CronBoss</span><span class="p">();</span>
+    <span class="nv">$jobs</span> <span class="o">=</span> <span class="nv">$cron</span><span class="o">-&gt;</span><span class="na">crondata</span><span class="p">();</span>
+
+    <span class="c1">//... modify $jobs...</span>
+
+    <span class="nv">$jobs</span><span class="p">[]</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+    <span class="nv">$cron</span><span class="o">-&gt;</span><span class="na">crontab</span><span class="p">(</span><span class="nv">$jobs</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+</pre></div>
+
+<p><em>NOTES: For me, for now, this is as simple as I need but I have
+planned some extensions. If you might find them useful get in touch,
+it might just be enough to make me do them!</em></p>
+
+<h1>
+<a name="future-enhancements" class="anchor" href="#future-enhancements"><span class="octicon octicon-link"></span></a>Future Enhancements</h1>
+
+<ul>
+<li>add() / remove() / find() methods</li>
+<li>implement PHP Array/Iterable etc interfaces for slicker integration</li>
+<li>use proc_open() to reap stderr when things go wrong!</li>
+<li>implement MARKED SECTION so that existing cron is left as-is and any items added from here are maintained at the end of the file within a tagged comment block.</li>
+</ul><p>** DISCLAIMER HERE: If it works, I wrote it. If it breaks then it's
+not my fault etc. Usual rules apply about using other peoples code! **</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Cronboss maintained by <a href="https://github.com/emacstheviking">emacstheviking</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
